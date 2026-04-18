@@ -1,16 +1,76 @@
-# React + Vite
+# Rimal — Desert artisan storefront
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page **e-commerce style** demo for a desert-themed artisan brand (**Rimal**). Built with **React** and **Vite**, styled with **Tailwind CSS**, with **English / Arabic** UI including **RTL** layout, a persisted shopping cart, and client-side routing.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Pages**: Home, products catalog with filters & search, product details, cart, about, contact  
+- **Internationalization**: English and Arabic strings; `dir` / `lang` on `<html>` switch with locale  
+- **RTL**: Arabic layout flows right-to-left where appropriate  
+- **State**: Zustand stores for theme, language, and cart (cart persisted in the browser)  
+- **UI**: Responsive layout, dark mode, accessible controls (labels, alt text)  
+- **Data-driven products**: Catalog lives in `src/data/products.js` (easy to extend)
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Area        | Choice                          |
+|------------|----------------------------------|
+| Framework  | React 19                         |
+| Build      | Vite 5                           |
+| Routing    | React Router 7                   |
+| Styling    | Tailwind CSS 3, PostCSS          |
+| State      | Zustand 5                        |
+| Linting    | ESLint 9 (flat config)           |
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Node.js** 18+ (20+ recommended)  
+- **npm** (comes with Node)
+
+## Getting started
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/TadresRadi/Ramal-for-desert-style-and-products.git
+cd Ramal-for-desert-style-and-products
+npm install
+```
+
+### Scripts
+
+| Command        | Description                |
+|----------------|----------------------------|
+| `npm run dev`  | Start dev server (Vite)    |
+| `npm run build`| Production build to `dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint                 |
+
+Development server defaults to **http://localhost:5173** (Vite).
+
+## Project layout (high level)
+
+```text
+src/
+  components/     # Layout, home sections, UI pieces
+  pages/          # Route-level screens
+  store/          # Zustand stores (lang, theme, cart)
+  i18n/           # en.js / ar.js translation objects
+  data/           # products, testimonials, reviews
+public/
+  images/         # Static imagery for products & hero
+```
+
+## Customization
+
+- **Products & copy**: Edit `src/data/products.js` and `src/i18n/en.js` / `src/i18n/ar.js`.  
+- **Theme / colors**: `tailwind.config.js` and `src/index.css`.  
+- **Routes**: `src/App.jsx`.
+
+## License
+
+This project is provided as a **demo / portfolio** starter. Add a license file if you redistribute or fork publicly.
+
+---
+
+**Repository:** [github.com/TadresRadi/Ramal-for-desert-style-and-products](https://github.com/TadresRadi/Ramal-for-desert-style-and-products)
