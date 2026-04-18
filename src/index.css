@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-sand-50 text-dune-900 dark:bg-dune-950 dark:text-sand-100;
+  }
+
+  /* RTL support */
+  [dir="rtl"] body {
+    font-family: 'Noto Kufi Arabic', 'Inter', system-ui, sans-serif;
+  }
+
+  [dir="rtl"] .font-display {
+    font-family: 'Noto Kufi Arabic', 'Poppins', system-ui, sans-serif;
+  }
+
+  /* Flip transforms in RTL */
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+  
+  ::selection {
+    @apply bg-desert-400/30 text-desert-900 dark:text-desert-100;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-sand-100 dark:bg-dune-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sand-400 dark:bg-dune-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sand-500 dark:bg-dune-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 dark:bg-dune-900/70 backdrop-blur-md border border-sand-200/50 dark:border-dune-700/50;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-desert-500 to-desert-700 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-desert-500 to-desert-600 
+           text-white font-medium rounded-xl shadow-warm hover:shadow-glow 
+           hover:from-desert-600 hover:to-desert-700 
+           transform hover:-translate-y-0.5 active:translate-y-0 
+           transition-all duration-300 ease-out;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-sand-100 dark:bg-dune-800 text-dune-800 dark:text-sand-200 
+           font-medium rounded-xl border border-sand-300 dark:border-dune-600 
+           hover:bg-sand-200 dark:hover:bg-dune-700 
+           transform hover:-translate-y-0.5 active:translate-y-0 
+           transition-all duration-300 ease-out;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 
+           text-dune-700 dark:text-sand-300 font-medium rounded-lg 
+           hover:bg-sand-100 dark:hover:bg-dune-800 
+           transition-all duration-300 ease-out;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-white dark:bg-dune-900 
+           border border-sand-300 dark:border-dune-600 rounded-xl 
+           text-dune-900 dark:text-sand-100 placeholder-sand-400 dark:placeholder-dune-500
+           focus:outline-none focus:ring-2 focus:ring-desert-400/50 focus:border-desert-400
+           transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-dune-900 rounded-2xl shadow-soft 
+           border border-sand-100 dark:border-dune-800 
+           hover:shadow-warm transition-all duration-300;
+  }
+  
+  .section-heading {
+    @apply font-display text-3xl md:text-4xl font-bold text-dune-900 dark:text-sand-50;
+  }
+  
+  .section-subheading {
+    @apply text-sand-600 dark:text-dune-400 text-lg max-w-2xl;
+  }
+  
+  /* Page transition */
+  .page-enter {
+    @apply animate-fade-in-up;
+  }
+  
+  /* Skeleton loading */
+  .skeleton {
+    @apply bg-gradient-to-r from-sand-200 via-sand-100 to-sand-200 
+           dark:from-dune-800 dark:via-dune-700 dark:to-dune-800
+           bg-[length:200%_100%] animate-shimmer rounded-lg;
+  }
+}
+
+@layer utilities {
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+/* Smooth page transitions */
+html {
+  scroll-behavior: smooth;
+}
