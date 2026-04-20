@@ -1,0 +1,17 @@
+{
+  "name": "Rimal — رمال",
+  "short_name": "Rimal",
+  "description": "Handcrafted treasures inspired by the timeless beauty of desert landscapes.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#e2632c",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
